@@ -6,6 +6,7 @@ authors = ["Christian Birchler <christian.birchler2@uzh.ch>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+PyGithub = "^1.55"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
