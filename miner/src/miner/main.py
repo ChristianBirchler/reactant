@@ -51,8 +51,11 @@ class PythonMiner:
                     filename = os.path.join(root, file)
                     # filename = os.path.join(os.getcwd(), 'main.py')
                     print(filename)
-                    with open(filename, 'r') as fp:
-                        node = ast.parse(fp.read())
+                    try:
+                        with open(filename, 'r') as fp:
+                            node = ast.parse(fp.read())
+                    except Exception:
+                        pass
 
                     my_node_visitor.visit(node)
 
