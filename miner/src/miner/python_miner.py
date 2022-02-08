@@ -38,6 +38,7 @@ class PythonMiner:
                             node = ast.parse(fp.read())
                             self.visitor.visit(node)
                     except Exception:
+                        # TODO: logging
                         pass
 
 

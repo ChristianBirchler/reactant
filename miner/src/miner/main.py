@@ -1,13 +1,25 @@
-import time
 import git
 import os
 import shutil
 from github import Github
+from multiprocessing.managers import BaseManager
 
 from python_miner import PythonMiner
 
 
-if __name__ == '__main__':
+class QueueManager(BaseManager):
+    pass
+
+
+def main():
+
+    QueueManager.register('get_queue')
+    m = QueueManager(address=('', 50000), authkey=b'abracadabra')
+    m.connect()
+    queue = m.get_queue()
+
+
+
     print('* start miner ...')
 
     g = Github('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')
@@ -33,8 +45,13 @@ if __name__ == '__main__':
 
         python_miner.git_repo = git_repo
         python_miner.mine()
-        print(python_miner.word_collector.words)
+        # print(python_miner.word_collector.words)
+
+        queue.put(python_miner.word_collector.words)
 
         shutil.rmtree(os.path.join(os.getcwd(), python_tmp_repo_dir))
         # time.sleep(2)
 
+
+if __name__ == '__main__':
+    main()
