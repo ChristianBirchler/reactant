@@ -38,3 +38,6 @@ class PythonMiner:
                     my_node_visitor.visit(node)
                     print(self.word_collector.words)
 
+
+if __name__ == '__main__':
+    pass
