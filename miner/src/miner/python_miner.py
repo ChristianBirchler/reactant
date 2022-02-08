@@ -36,4 +36,5 @@ class PythonMiner:
                         pass
 
                     my_node_visitor.visit(node)
+                    print(self.word_collector.words)
 
