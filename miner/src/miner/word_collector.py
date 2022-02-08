@@ -13,15 +13,20 @@ class WordCollector:
         :param func_name: function or method names
         :return: None
         """
-        print('func_name: {}'.format(func_name))
-        # TODO: Fix the regex pattern!
-        separated_name_segments = re.split(r'_+', func_name)
-        for segment in separated_name_segments:
-            for i in range(len(segment)):
-                if segment[i] in self.digit_chars:
-                    print('is number')
+        # print('func_name: {}'.format(func_name))
+        names_separated = re.split('_', func_name)
+        for name in names_separated:
+            matches_str_lst = re.findall(r'[a-z]+|[A-Z]+[a-z]*', name)
+            for match_str in matches_str_lst:
+                lower_case = match_str.lower()
+                # print(lower_case)
+                if lower_case in self.words.keys():
+                    self.words[lower_case] += 1
+                else:
+                    self.words[lower_case] = 1
 
 
 if __name__ == '__main__':
     wc = WordCollector()
-    wc.extract_words_from('camel_12CaseCamelCase')
+    wc.extract_words_from('camel32_12CaseCamelCase_hello_myFriend_my')
+    print(wc.words)
