@@ -16,13 +16,17 @@ if __name__ == '__main__':
 
     if os.path.exists(os.path.join(os.getcwd(), 'repo')):
         shutil.rmtree(os.path.join(os.getcwd(), 'repo'))
+
+    python_miner = PythonMiner()
+
     for repo in repositories:
         os.mkdir(os.path.join(os.getcwd(), 'repo'))
         print('{} stars: {}'.format(repo.name, repo.stargazers_count))
         print(repo.clone_url)
 
         git_repo = git.Repo.clone_from(repo.clone_url, os.path.join(os.getcwd(), 'repo'))
-        python_miner = PythonMiner(git_repo)
+
+        python_miner.git_repo = git_repo
         python_miner.mine()
 
         print('git_repo: {}'.format(git_repo))

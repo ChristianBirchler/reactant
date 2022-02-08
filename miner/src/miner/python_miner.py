@@ -5,8 +5,8 @@ from word_collector import WordCollector
 
 
 class PythonMiner:
-    def __init__(self, git_repo_):
-        self.git_repo = git_repo_
+    def __init__(self):
+        self.git_repo = None
         self.word_collector = WordCollector()
 
     def mine(self):
