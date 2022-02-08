@@ -4,7 +4,6 @@ import re
 class WordCollector:
     def __init__(self):
         self.words = {}
-        self.digit_chars = [str(x) for x in range(10)]
 
     def extract_words_from(self, func_name):
         """
