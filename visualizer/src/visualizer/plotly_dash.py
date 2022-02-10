@@ -23,8 +23,8 @@ def get_top_words(data, n):
 
 def get_figure(x1, y1, x2, y2):
     fig = make_subplots(rows=2, cols=1, shared_xaxes=False, vertical_spacing=0.1)
-    fig.add_trace(go.Bar(x=x1, y=y1), row=1, col=1)
-    fig.add_trace(go.Bar(x=x2, y=y2), row=2, col=1)
+    fig.add_trace(go.Bar(x=x1, y=y1, name='Python'), row=1, col=1)
+    fig.add_trace(go.Bar(x=x2, y=y2, name='Java'), row=2, col=1)
     fig.update_layout(height=1000, width=1000,
                       title_text="Popular words in function/method names of Java and Python repositories on GitHub")
     return fig
