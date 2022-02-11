@@ -1,0 +1,9 @@
+services:
+  visualizer:
+    build: visualizer
+    ports:
+      - "8050:8050"
+  miner:
+    build: miner
+    depends_on:
+      - visualizer

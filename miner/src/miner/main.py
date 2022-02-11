@@ -52,7 +52,11 @@ if __name__ == '__main__':
     QueueManager.register('get_python_queue')
     QueueManager.register('get_java_queue')
 
-    queue_manager = QueueManager(address=('', 50000), authkey=b'abracadabra')
+    if os.getenv('VISUALIZER') != 'visualizer':
+        address = ''
+    else:
+        address = 'visualizer'
+    queue_manager = QueueManager(address=(address, 50000), authkey=b'abracadabra')
     queue_manager.connect()
 
     python_queue = queue_manager.get_python_queue()
