@@ -4,6 +4,8 @@ GitHub. For this reason I came up with the name *reactant*:
 
 > popula**R** m**E**thod **A**nd fun**CT**ion n**A**mes o**N** gi**T**hub
 
+![](resources/screenshot.png)
+
 ## Run *reactant* with Docker Compose
 First, simply clone the repository:
 ```
