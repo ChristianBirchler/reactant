@@ -15,10 +15,12 @@ cd reactant
 If you use docker on a Mac, then docker compose is already installed and you can run the application with the following
 command:
 ```
+docker compose build
 docker compose up -d
 ```
 In case you do not use a Mac, then you can install docker-compose with `pip`. The command looks slightly different:
 ```
+docker-compose build
 docker-compose up -d
 ```
 The `-d` is optional but it will deamonize the containers but if you want to have the output of the containers in your
