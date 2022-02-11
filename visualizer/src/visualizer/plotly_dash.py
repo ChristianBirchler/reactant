@@ -4,13 +4,13 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from multiprocessing import Queue
 
-N = 3
+N = 10
 
-values_python = [0, 0, 0]
-top_words_python = ["", "", ""]
+values_python = [0 for x in range(N)]
+top_words_python = ['' for x in range(N)]
 
-values_java = [0, 0, 0]
-top_words_java = ["", "", ""]
+values_java = [0 for x in range(N)]
+top_words_java = ['' for x in range(N)]
 
 
 def get_top_words(data, n):
@@ -36,7 +36,7 @@ def run_plotly_dash_app(msg_queue_python: Queue, msg_queue_java: Queue, debug=Fa
     app.layout = html.Div(children=[
         html.H1(children='REACTANT'),
         # html.Div(children='Dash: A web application framework for your data.'),
-        dcc.Input(id='input', value=3, type='number'),
+        dcc.Input(id='input', value=N, type='number'),
         dcc.Graph(id='live-graph'),
         dcc.Interval(id='interval-component', interval=1000)
     ])
