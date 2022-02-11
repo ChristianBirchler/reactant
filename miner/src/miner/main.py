@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
     print('* start miner ...')
 
-    g = Github('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')
+    g = Github('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')
 
     python_repositories = g.search_repositories(query='language:Python', sort='stars', order='desc')
     java_repositories = g.search_repositories(query='language:Java', sort='stars', order='desc')
