@@ -1,4 +1,4 @@
 .idea
 miner/src/miner/repo
-*/__pycache__/*
+__pycache__/*
 
