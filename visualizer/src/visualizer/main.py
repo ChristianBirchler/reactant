@@ -40,8 +40,6 @@ class QueueManagerProcess(Process):
         print('* start queue manager server')
         server.serve_forever()
         print('* queue manager server started')
-        while True:
-            pass
 
 
 if __name__ == '__main__':
