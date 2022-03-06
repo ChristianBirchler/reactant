@@ -7,3 +7,5 @@ services:
     build: miner
     depends_on:
       - visualizer
+    environment:
+      - "GH_TOKEN=${GH_TOKEN}"
