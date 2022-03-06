@@ -6,6 +6,17 @@ GitHub. For this reason I came up with the name *reactant*:
 
 ![](resources/screenshot.png)
 
+## Environment Variable
+To have fewer restrictions to access the GitHub API, you should generate an access token. You find in the
+[Documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+the instructions to generate such a token.
+
+The token is defacto your credentials to your GitHub account and should not be exposed to others.
+To mitigate this issue, you should store the token in an environment variable:
+```
+export GH_TOKEN=<your token>
+```
+
 ## Run *reactant* with Docker Compose
 First, simply clone the repository:
 ```
@@ -42,17 +53,6 @@ poetry install
 
 cd ../visualizer
 poetry install
-```
-
-### Environment Variable
-To have fewer restrictions to access the GitHub API, you should generate an access token. You find in the
-[Documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-the instructions to generate such a token.
-
-The token is defacto your credentials to your GitHub account and should not be exposed to others.
-To mitigate this issue, you should store the token in an environment variable:
-```
-export GH_TOKEN=<your token>
 ```
 
 ### Run *reactant*
